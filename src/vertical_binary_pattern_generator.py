@@ -48,13 +48,15 @@ print(xv.shape[0])
 ctx = cairo.Context (surface)
 ctx.set_source_rgb(0,0,0)
 for i in range(xv.shape[0]):
-	if( i%2 == 1 ):
-		for j in range(0,xv.shape[1],2):
-			ctx.rectangle((horizontal_space+xv[i][j]*checkerboard_size),(vertical_space+yv[i][j]*checkerboard_size),checkerboard_size,checkerboard_size)
-			ctx.fill()
-	else:
-		for j in range(1,xv.shape[1],2):
-			ctx.rectangle((horizontal_space+xv[i][j]*checkerboard_size),(vertical_space+yv[i][j]*checkerboard_size),checkerboard_size,checkerboard_size)
-			ctx.fill()
+	if( i%2 == 1):
+		for j in range(0,xv.shape[1],1):
+			if(j%2 ==1):
+				ctx.rectangle((horizontal_space+xv[i][j]*checkerboard_size),(vertical_space),checkerboard_size,HEIGHT-2*vertical_space)
+				ctx.fill()
+	# else:
 
-surface.write_to_png ("pattern2.png") # Output to PNG
+		# for j in range(1,xv.shape[1],2):
+		# 	ctx.rectangle((horizontal_space+xv[i][j]*checkerboard_size),(vertical_space+yv[i][j]*checkerboard_size),checkerboard_size,checkerboard_size)
+		# 	ctx.fill()
+
+surface.write_to_png ("pattern6.png") # Output to PNG

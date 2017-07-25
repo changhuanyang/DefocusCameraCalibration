@@ -1,26 +1,23 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-# Create a figure of size 8x6 inches, 80 dots per inch
-my_dpi = 96
-ax1 =plt.figure(figsize=(20, 10), dpi=my_dpi)
+import cv2
 
-# Create a new subplot from a grid of 1x1
-ax1 = plt.subplot(1, 1, 1)
+img1 = cv2.imread('pattern3.png',cv2.IMREAD_COLOR )
+img2 = cv2.imread('pattern4.png',cv2.IMREAD_COLOR )
+img3 = cv2.imread('pattern5.png',cv2.IMREAD_COLOR )
+img4 = cv2.imread('pattern6.png',cv2.IMREAD_COLOR )
+img5 = cv2.imread('pattern1.png',cv2.IMREAD_COLOR )
+while(1):
+	cv2.imshow('image',img5)
+	cv2.waitKey(0)
+	cv2.imshow('image',img1)
+	cv2.waitKey(0)
+	cv2.imshow('image',img2)
+	cv2.waitKey(0)
+	cv2.imshow('image',img3)
+	cv2.waitKey(0)
+	cv2.imshow('image',img4)
+	cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
-ax1.add_patch(
-    patches.Rectangle(
-        (0.1, 0.1),   # (x,y)
-        0.5,          # width
-        0.5,          # height
-    	facecolor='black'
-    )
-)
-
-# Save figure using 72 dots per inch
-# plt.savefig("exercice_2.png", dpi=72)
-
-# Show result on screen
-plt.show()
-# plt.savefig('my_fig.png', dpi=my_dpi)
+	
